@@ -2,10 +2,114 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>GameVest</title>
+  <title>GameVest — Инвестиции для подростков</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+    }
+    header {
+      background-color: #1a1a1a;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #00ffcc;
+    }
+    nav a {
+      color: #ffffff;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ffcc;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero button {
+      background-color: #00ffcc;
+      color: #0f0f0f;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .hero button:hover {
+      background-color: #00cc99;
+    }
+    .about {
+      padding: 80px 20px;
+      background-color: #1a1a1a;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .about p {
+      font-size: 18px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    footer {
+      background-color: #0f0f0f;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #666666;
+    }
+  </style>
 </head>
-<body style="background-color:#111; color:#fff; font-family:Montserrat, sans-serif; text-align:center; padding-top:100px;">
-  <h1>Добро пожаловать на сайт GameVest!</h1>
-  <p>Скоро здесь будет крутая инвестиционная платформа для подростков.</p>
+<body>
+
+  <header>
+    <div class="logo">GameVest</div>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Добро пожаловать в GameVest</h1>
+    <p>Инновационная инвестиционная платформа для подростков. Учись инвестировать и управляй своими финансами с умом!</p>
+    <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">Узнать больше</button>
+  </section>
+
+  <section class="about" id="about">
+    <h2>О нас</h2>
+    <p>GameVest — это платформа, созданная для обучения подростков основам инвестирования. Мы предлагаем интерактивные курсы, симуляции и реальные инструменты для управления финансами, чтобы подготовить молодое поколение к финансово грамотному будущему.</p>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 GameVest. Все права защищены.</p>
+    <p>Свяжитесь с нами: <a href="mailto:info@gamevest.com" style="color: #00ffcc;">info@gamevest.com</a></p>
+  </footer>
+
 </body>
 </html>
