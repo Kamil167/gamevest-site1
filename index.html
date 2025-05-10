@@ -61,7 +61,7 @@
       transform: scale(1.1);
       background-color: #00cc99;
     }
-    .courses, .meme, .about {
+    .courses, .meme, .about, .crypto-image {
       padding: 80px 20px;
       text-align: center;
       background-color: #1a1a1a;
@@ -103,6 +103,16 @@
       font-size: 14px;
       color: #666;
     }
+    .crypto-image img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .crypto-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ffcc;
+    }
   </style>
 </head>
 <body>
@@ -112,6 +122,7 @@
     <nav>
       <a href="#courses">Курсы</a>
       <a href="#meme">Мем</a>
+      <a href="#crypto">Крипта</a>
       <a href="#about">О нас</a>
     </nav>
   </header>
@@ -145,6 +156,11 @@
     <h2>Мем недели</h2>
     <img src="https://i.imgur.com/5JzGkkX.jpeg" alt="Мем" />
     <p>Инвестиции могут быть весёлыми!</p>
+  </section>
+
+  <section class="crypto-image" id="crypto">
+    <h2>Криптовалюта в стиле киберпанк</h2>
+    <img src="https://img.freepik.com/free-ai-image/cyberpunk-bitcoin-illustration_236291652.jpg" alt="Киберпанк Биткоин">
   </section>
 
   <section class="about" id="about">
