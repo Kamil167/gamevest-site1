@@ -10,6 +10,7 @@
       font-family: 'Montserrat', sans-serif;
       background-color: #0f0f0f;
       color: #ffffff;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #1a1a1a;
@@ -27,7 +28,6 @@
       color: #ffffff;
       margin-left: 20px;
       text-decoration: none;
-      transition: color 0.3s;
     }
     nav a:hover {
       color: #00ffcc;
@@ -35,7 +35,6 @@
     .hero {
       text-align: center;
       padding: 100px 20px;
-      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
     }
     .hero h1 {
       font-size: 48px;
@@ -48,40 +47,61 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .hero button {
+    .hero .start-btn {
       background-color: #00ffcc;
-      color: #0f0f0f;
+      color: #000;
       border: none;
       padding: 15px 30px;
-      font-size: 16px;
-      border-radius: 5px;
+      font-size: 18px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: transform 0.3s ease;
     }
-    .hero button:hover {
+    .hero .start-btn:hover {
+      transform: scale(1.1);
       background-color: #00cc99;
     }
-    .about {
+    .courses, .meme, .about {
       padding: 80px 20px;
-      background-color: #1a1a1a;
       text-align: center;
+      background-color: #1a1a1a;
     }
-    .about h2 {
+    .courses h2, .meme h2, .about h2 {
       font-size: 36px;
       margin-bottom: 20px;
     }
-    .about p {
-      font-size: 18px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+    .courses .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: #2a2a2a;
+    }
+    .card h3 {
+      color: #00ffcc;
+    }
+    .meme img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
     }
     footer {
       background-color: #0f0f0f;
       padding: 20px;
       text-align: center;
       font-size: 14px;
-      color: #666666;
+      color: #666;
     }
   </style>
 </head>
@@ -90,25 +110,50 @@
   <header>
     <div class="logo">GameVest</div>
     <nav>
+      <a href="#courses">Курсы</a>
+      <a href="#meme">Мем</a>
       <a href="#about">О нас</a>
-      <a href="#contact">Контакты</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Добро пожаловать в GameVest</h1>
-    <p>Инновационная инвестиционная платформа для подростков. Учись инвестировать и управляй своими финансами с умом!</p>
-    <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">Узнать больше</button>
+    <p>Инвестиционная платформа, где подростки учатся управлять деньгами и зарабатывать с умом</p>
+    <button class="start-btn" onclick="window.location.href='https://t.me/'">Начать</button>
+  </section>
+
+  <section class="courses" id="courses">
+    <h2>Наши курсы</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Криптовалюты</h3>
+        <p>Изучи основы биткоина, эфириума и блокчейна с примерами.</p>
+      </div>
+      <div class="card">
+        <h3>Финансовая грамотность</h3>
+        <p>Пойми, как работают деньги, банки и инвестиции с нуля.</p>
+      </div>
+      <div class="card">
+        <h3>Акции и биржи</h3>
+        <p>Узнай, как работают фондовые рынки и как покупать акции.</p>
+      </div>
+    </div>
+    <p style="margin-top: 40px;"><a href="courses.html" style="color:#00ffcc;">Перейти ко всем курсам →</a></p>
+  </section>
+
+  <section class="meme" id="meme">
+    <h2>Мем недели</h2>
+    <img src="https://i.imgur.com/5JzGkkX.jpeg" alt="Мем" />
+    <p>Инвестиции могут быть весёлыми!</p>
   </section>
 
   <section class="about" id="about">
     <h2>О нас</h2>
-    <p>GameVest — это платформа, созданная для обучения подростков основам инвестирования. Мы предлагаем интерактивные курсы, симуляции и реальные инструменты для управления финансами, чтобы подготовить молодое поколение к финансово грамотному будущему.</p>
+    <p>GameVest — это площадка, созданная подростками для подростков. Мы обучаем основам инвестирования через игру, мемы и настоящие кейсы.</p>
   </section>
 
-  <footer id="contact">
+  <footer>
     <p>© 2025 GameVest. Все права защищены.</p>
-    <p>Свяжитесь с нами: <a href="mailto:info@gamevest.com" style="color: #00ffcc;">info@gamevest.com</a></p>
   </footer>
 
 </body>
