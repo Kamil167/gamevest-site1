@@ -2,175 +2,155 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>GameVest — Инвестиции для подростков</title>
+  <title>GameVest — инвестиции для геймеров</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
-      scroll-behavior: smooth;
+      color: white;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
     }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: background-color 0.5s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    body:hover .overlay {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
     header {
-      background-color: #1a1a1a;
-      padding: 20px 40px;
+      position: relative;
+      z-index: 2;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.6);
     }
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #00ffcc;
+
+    header img {
+      height: 50px;
     }
+
     nav a {
-      color: #ffffff;
-      margin-left: 20px;
+      color: #00ffc8;
+      margin-left: 30px;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      color: #00ffcc;
+      color: #ffffff;
     }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero .start-btn {
-      background-color: #00ffcc;
-      color: #000;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .hero .start-btn:hover {
-      transform: scale(1.1);
-      background-color: #00cc99;
-    }
-    .courses, .meme, .about, .crypto-image {
-      padding: 80px 20px;
-      text-align: center;
-      background-color: #1a1a1a;
-    }
-    .courses h2, .meme h2, .about h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .courses .card-container {
+
+    .main {
+      position: relative;
+      z-index: 2;
+      height: 90vh;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background-color: #222;
+      align-items: center;
+      text-align: center;
       padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-      transition: transform 0.3s;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      background-color: #2a2a2a;
+
+    .main h1 {
+      font-size: 48px;
+      color: #00ffc8;
+      margin-bottom: 20px;
     }
-    .card h3 {
-      color: #00ffcc;
+
+    .main p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-bottom: 40px;
     }
-    .meme img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 20px;
+
+    .start-button {
+      padding: 16px 36px;
+      font-size: 18px;
+      background: linear-gradient(135deg, #00ffc8, #00aaff);
+      border: none;
+      border-radius: 12px;
+      color: black;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .start-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffc8;
+    }
+
     footer {
-      background-color: #0f0f0f;
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
       text-align: center;
-      font-size: 14px;
-      color: #666;
+      color: #888;
     }
-    .crypto-image img {
-      width: 80%;
-      max-width: 600px;
-      border-radius: 15px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .crypto-image img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00ffcc;
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: 10px 10px 0 0;
+        display: inline-block;
+      }
+
+      .main h1 {
+        font-size: 36px;
+      }
+
+      .main p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-
+  <div class="overlay"></div>
   <header>
-    <div class="logo">GameVest</div>
+    <img src="logo.png" alt="GameVest">
     <nav>
-      <a href="#courses">Курсы</a>
-      <a href="#meme">Мем</a>
-      <a href="#crypto">Крипта</a>
-      <a href="#about">О нас</a>
+      <a href="#">О нас</a>
+      <a href="#">Курсы</a>
+      <a href="#">Контакты</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Добро пожаловать в GameVest</h1>
-    <p>Инвестиционная платформа, где подростки учатся управлять деньгами и зарабатывать с умом</p>
-    <button class="start-btn" onclick="window.location.href='https://t.me/iudomen'">Начать</button>
-  </section>
-
-  <section class="courses" id="courses">
-    <h2>Наши курсы</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>Криптовалюты</h3>
-        <p>Изучи основы биткоина, эфириума и блокчейна с примерами.</p>
-      </div>
-      <div class="card">
-        <h3>Финансовая грамотность</h3>
-        <p>Пойми, как работают деньги, банки и инвестиции с нуля.</p>
-      </div>
-      <div class="card">
-        <h3>Акции и биржи</h3>
-        <p>Узнай, как работают фондовые рынки и как покупать акции.</p>
-      </div>
-    </div>
-    <p style="margin-top: 40px;"><a href="courses.html" style="color:#00ffcc;">Перейти ко всем курсам →</a></p>
-  </section>
-
-  <section class="meme" id="meme">
-    <h2>Мем недели</h2>
-    <img src="https://i.imgur.com/5JzGkkX.jpeg" alt="Мем" />
-    <p>Инвестиции могут быть весёлыми!</p>
-  </section>
-
-  <section class="crypto-image" id="crypto">
-    <h2>Криптовалюта в стиле киберпанк</h2>
-    <img src="https://img.freepik.com/free-ai-image/cyberpunk-bitcoin-illustration_236291652.jpg" alt="Киберпанк Биткоин">
-  </section>
-
-  <section class="about" id="about">
-    <h2>О нас</h2>
-    <p>GameVest — это площадка, созданная подростками для подростков. Мы обучаем основам инвестирования через игру, мемы и настоящие кейсы.</p>
-  </section>
+  <div class="main">
+    <h1>GameVest — инвестиции для нового поколения</h1>
+    <p>Объединяем геймеров и криптоинвесторов. Прокачай свои навыки, чтобы зарабатывать на играх и инвестициях!</p>
+    <button class="start-button">Начать</button>
+  </div>
 
   <footer>
-    <p>© 2025 GameVest. Все права защищены.</p>
+    © 2025 GameVest. Все права защищены.
   </footer>
-
 </body>
 </html>
