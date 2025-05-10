@@ -17,6 +17,7 @@
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       overflow-x: hidden;
+      cursor: none;
     }
 
     .overlay {
@@ -35,9 +36,20 @@
       background-color: rgba(0, 0, 0, 0.2);
     }
 
+    .light-circle {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(0, 255, 200, 0.3) 0%, transparent 70%);
+      z-index: 2;
+      mix-blend-mode: screen;
+    }
+
     header {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -63,7 +75,7 @@
 
     .main {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       height: 90vh;
       display: flex;
       flex-direction: column;
@@ -101,9 +113,14 @@
       box-shadow: 0 0 15px #00ffc8;
     }
 
+    .start-button:active {
+      box-shadow: 0 0 25px #00ffc8;
+      transform: scale(0.95);
+    }
+
     footer {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
       text-align: center;
@@ -134,6 +151,8 @@
 </head>
 <body>
   <div class="overlay"></div>
+  <div class="light-circle" id="light"></div>
+
   <header>
     <img src="logo.png" alt="GameVest">
     <nav>
@@ -146,11 +165,21 @@
   <div class="main">
     <h1>GameVest — инвестиции для нового поколения</h1>
     <p>Объединяем геймеров и криптоинвесторов. Прокачай свои навыки, чтобы зарабатывать на играх и инвестициях!</p>
-    <button class="start-button">Начать</button>
+    <a href="https://t.me/iudomen" target="_blank">
+      <button class="start-button">Начать</button>
+    </a>
   </div>
 
   <footer>
     © 2025 GameVest. Все права защищены.
   </footer>
+
+  <script>
+    const light = document.getElementById('light');
+    document.addEventListener('mousemove', e => {
+      light.style.left = e.pageX - 100 + 'px';
+      light.style.top = e.pageY - 100 + 'px';
+    });
+  </script>
 </body>
 </html>
