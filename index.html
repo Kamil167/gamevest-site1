@@ -154,4 +154,29 @@
   <div class="light-circle" id="light"></div>
 
   <header>
-    <img…
+    <img src="logo.png" alt="GameVest Logo" />
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <h1>GameVest</h1>
+    <p>Платформа, где геймеры учатся инвестировать и зарабатывать криптовалюту, играя.</p>
+    <button class="start-button">Начать</button>
+  </main>
+
+  <footer>
+    © 2025 GameVest. Все права защищены.
+  </footer>
+
+  <script>
+    const light = document.getElementById('light');
+    document.addEventListener('mousemove', (e) => {
+      light.style.left = ${e.clientX - 100}px;
+      light.style.top = ${e.clientY - 100}px;
+    });
+  </script>
+</body>
+</html>
