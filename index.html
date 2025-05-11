@@ -102,6 +102,8 @@
       color: black;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      font-weight: 700;
     }
 
     .start-button:hover {
@@ -160,7 +162,7 @@
   <main class="main">
     <h1>GameVest</h1>
     <p>Платформа, где геймеры учатся инвестировать и зарабатывать криптовалюту, играя.</p>
-    <button class="start-button">Начать</button>
+    <a class="start-button" href="https://t.me/iudomen" target="_blank">Начать</a>
   </main>
 
   <footer>
@@ -170,8 +172,8 @@
   <script>
     const light = document.getElementById('light');
     document.addEventListener('mousemove', (e) => {
-      light.style.left = ${e.clientX - 150}px;
-      light.style.top = ${e.clientY - 150}px;
+      light.style.left = (e.clientX - 150) + 'px';
+      light.style.top = (e.clientY - 150) + 'px';
     });
   </script>
 </body>
