@@ -1,133 +1,154 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameVest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(ellipse at center, #0f0f0f 0%, #000000 100%);
+      color: white;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: #111;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(10, 10, 10, 0.95);
+      z-index: 1000;
+    }
 
-        header nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
+    header .logo {
+      font-weight: 700;
+      font-size: 24px;
+    }
 
-        header nav a:hover {
-            color: #00ffff;
-        }
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
 
-        .section {
-            padding: 120px 10% 80px;
-            min-height: 100vh;
-        }
+    nav a:hover {
+      color: #00ffc3;
+    }
 
-        #hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: url('https://i.imgur.com/XTlZkzH.jpeg') center/cover no-repeat;
-            text-align: center;
-        }
+    section {
+      padding: 100px 10% 60px;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-        #hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
+    #hero {
+      text-align: center;
+    }
 
-        #hero p {
-            font-size: 1.3em;
-            max-width: 600px;
-        }
+    #hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #00ffc3;
+    }
 
-        #about h2, #contact h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+    #hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 0 0 10px #00ffc3;
+    }
 
-        #about p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
+    .glow-box {
+      transition: 0.3s ease;
+      padding: 30px;
+      border-radius: 10px;
+      background: #141414;
+    }
 
-        #contact .buttons {
-            margin-top: 30px;
-        }
+    .glow-box:hover {
+      box-shadow: 0 0 30px #00ffc3;
+    }
 
-        .btn {
-            background-color: #00ffff;
-            color: #000;
-            border: none;
-            padding: 15px 30px;
-            margin: 10px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00ffc3;
+    }
 
-        .btn:hover {
-            background-color: #00cccc;
-        }
-    </style>
+    p {
+      font-size: 1.05em;
+      line-height: 1.5;
+    }
+
+    .btn {
+      background-color: #00ffc3;
+      color: #000;
+      font-weight: 700;
+      padding: 12px 26px;
+      margin: 15px 10px 0;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px #00ffc3;
+      transform: translateY(-3px);
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="logo"><strong>GameVest</strong></div>
-    <nav>
-        <a href="#about">О нас</a>
-        <a href="#contact">Контакты</a>
-    </nav>
+  <div class="logo">GameVest</div>
+  <nav>
+    <a href="#about">О нас</a>
+    <a href="#contact">Контакты</a>
+  </nav>
 </header>
 
-<section id="hero" class="section">
-    <h1>GameVest</h1>
-    <p>Прокачай навыки — прокачай кошелёк. Добро пожаловать в мир инвестиций через игры.</p>
+<section id="hero">
+  <h1>GameVest</h1>
+  <p>Прокачай навыки — прокачай кошелёк. Добро пожаловать в мир инвестиций через игры.</p>
 </section>
 
-<section id="about" class="section">
+<section id="about">
+  <div class="glow-box">
     <h2>О нас</h2>
-    <p>Мы — команда, создающая игровую инвестиционную платформу для подростков. Здесь ты можешь обучаться финансовой грамотности, проходить игровые квесты и зарабатывать криптовалюту, выполняя полезные действия. Наш проект объединяет образование и игру, делая обучение интересным и прибыльным.</p>
+    <p>GameVest — это платформа, где обучение финансовой грамотности становится игрой. Мы объединяем квесты, задания и вознаграждение в криптовалюте, чтобы ты мог расти и зарабатывать одновременно.</p>
+  </div>
 </section>
 
-<section id="contact" class="section">
+<section id="contact">
+  <div class="glow-box">
     <h2>Связь с нами</h2>
-    <p>Если у тебя есть вопросы, предложения или ты хочешь присоединиться к проекту — свяжись с нами!</p>
+    <p>Если у тебя есть вопросы, идеи или ты хочешь присоединиться — напиши нам!</p>
     <div class="buttons">
-        <a class="btn" href="https://t.me/iudomen" target="_blank">Телеграмм</a>
-        <a class="btn" href="mailto:kdsh100@icloud.com">Почта</a>
+      <a class="btn" href="https://t.me/iudomen" target="_blank">Телеграмм</a>
+      <a class="btn" href="mailto:kdsh100@icloud.com">Почта</a>
     </div>
+  </div>
 </section>
 
 </body>
