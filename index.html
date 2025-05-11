@@ -1,188 +1,134 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>GameVest — инвестиции для геймеров</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-      background: #000;
-      overflow: hidden;
-      position: relative;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
 
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('background.png') center center no-repeat;
-      background-size: cover;
-      filter: brightness(0.3);
-      z-index: 0;
-    }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #111;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .light-effect {
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,255,200,0.3) 0%, transparent 70%);
-      mix-blend-mode: screen;
-      pointer-events: none;
-      z-index: 1;
-    }
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-    header {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background: rgba(0, 0, 0, 0.6);
-    }
+        header nav a:hover {
+            color: #00ffff;
+        }
 
-    header img {
-      height: 50px;
-    }
+        .section {
+            padding: 120px 10% 80px;
+            min-height: 100vh;
+        }
 
-    nav a {
-      color: #00ffc8;
-      margin-left: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
+        #hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url('https://i.imgur.com/XTlZkzH.jpeg') center/cover no-repeat;
+            text-align: center;
+        }
 
-    nav a:hover {
-      color: #ffffff;
-    }
+        #hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
 
-    .main {
-      position: relative;
-      z-index: 2;
-      height: calc(100vh - 160px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
+        #hero p {
+            font-size: 1.3em;
+            max-width: 600px;
+        }
 
-    .main h1 {
-      font-size: 42px;
-      color: #00ffc8;
-      margin-bottom: 20px;
-    }
+        #about h2, #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
 
-    .main p {
-      font-size: 18px;
-      max-width: 600px;
-      margin-bottom: 40px;
-    }
+        #about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
 
-    .start-button {
-      padding: 16px 36px;
-      font-size: 18px;
-      background: linear-gradient(135deg, #00ffc8, #00aaff);
-      border: none;
-      border-radius: 12px;
-      color: black;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+        #contact .buttons {
+            margin-top: 30px;
+        }
 
-    .start-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffc8;
-    }
+        .btn {
+            background-color: #00ffff;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
 
-    .start-button:active {
-      box-shadow: 0 0 25px #00ffc8;
-      transform: scale(0.95);
-    }
-
-    footer {
-      position: relative;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      text-align: center;
-      color: #888;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin: 10px 10px 0 0;
-        display: inline-block;
-      }
-
-      .main h1 {
-        font-size: 32px;
-      }
-
-      .main p {
-        font-size: 16px;
-      }
-    }
-  </style>
+        .btn:hover {
+            background-color: #00cccc;
+        }
+    </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="light-effect" id="light"></div>
 
-  <header>
-    <img src="logo.png" alt="GameVest">
+<header>
+    <div class="logo"><strong>GameVest</strong></div>
     <nav>
-      <a href="#">О нас</a>
-      <a href="#">Курсы</a>
-      <a href="#">Контакты</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
     </nav>
-  </header>
+</header>
 
-  <div class="main">
-    <h1>GameVest — инвестиции для нового поколения</h1>
-    <p>Объединяем геймеров и криптоинвесторов. Прокачай свои навыки, чтобы зарабатывать на играх и инвестициях!</p>
-    <a href="https://t.me/iudomen" target="_blank">
-      <button class="start-button">Начать</button>
-    </a>
-  </div>
+<section id="hero" class="section">
+    <h1>GameVest</h1>
+    <p>Прокачай навыки — прокачай кошелёк. Добро пожаловать в мир инвестиций через игры.</p>
+</section>
 
-  <footer>
-    © 2025 GameVest. Все права защищены.
-  </footer>
+<section id="about" class="section">
+    <h2>О нас</h2>
+    <p>Мы — команда, создающая игровую инвестиционную платформу для подростков. Здесь ты можешь обучаться финансовой грамотности, проходить игровые квесты и зарабатывать криптовалюту, выполняя полезные действия. Наш проект объединяет образование и игру, делая обучение интересным и прибыльным.</p>
+</section>
 
-  <script>
-    const light = document.getElementById('light');
+<section id="contact" class="section">
+    <h2>Связь с нами</h2>
+    <p>Если у тебя есть вопросы, предложения или ты хочешь присоединиться к проекту — свяжись с нами!</p>
+    <div class="buttons">
+        <a class="btn" href="https://t.me/iudomen" target="_blank">Телеграмм</a>
+        <a class="btn" href="mailto:kdsh100@icloud.com">Почта</a>
+    </div>
+</section>
 
-    document.addEventListener('mousemove', (e) => {
-      light.style.left = e.pageX - 150 + 'px';
-      light.style.top = e.pageY - 150 + 'px';
-    });
-
-    document.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      light.style.left = touch.pageX - 150 + 'px';
-      light.style.top = touch.pageY - 150 + 'px';
-    });
-  </script>
 </body>
 </html>
