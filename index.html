@@ -10,13 +10,14 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Montserrat', sans-serif;
       color: white;
       background: #000;
-      overflow: hidden;
+      overflow-x: hidden;
       position: relative;
     }
 
@@ -69,15 +70,19 @@
       color: #ffffff;
     }
 
-    .main {
+    section {
       position: relative;
       z-index: 2;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .main {
       height: calc(100vh - 160px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 20px;
     }
 
@@ -114,6 +119,28 @@
     .start-button:active {
       box-shadow: 0 0 25px #00ffc8;
       transform: scale(0.95);
+    }
+
+    .contact-buttons {
+      margin-top: 20px;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #00ffc8, #00aaff);
+      color: black;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .contact-buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffc8;
     }
 
     footer {
@@ -164,6 +191,20 @@
     <p>Платформа, где геймеры учатся инвестировать и зарабатывать криптовалюту, играя.</p>
     <a class="start-button" href="https://t.me/iudomen" target="_blank">Начать</a>
   </main>
+
+  <section id="about">
+    <h2>О нас</h2>
+    <p>GameVest объединяет игру и инвестиции: мы даём подросткам возможность учиться финансовой грамотности, участвовать в игровых квестах и зарабатывать криптовалюту за реальные действия.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Контакты</h2>
+    <p>Свяжись с нами в любой момент — мы всегда на связи!</p>
+    <div class="contact-buttons">
+      <a href="mailto:kdsh100@icloud.com">Почта</a>
+      <a href="https://t.me/iudomen" target="_blank">Телеграмм</a>
+    </div>
+  </section>
 
   <footer>
     © 2025 GameVest. Все права защищены.
