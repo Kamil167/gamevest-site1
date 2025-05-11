@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>GameVest — инвестиции для геймеров</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -15,32 +14,25 @@
     body {
       font-family: 'Montserrat', sans-serif;
       color: white;
-      background: #000;
-      overflow: hidden;
-      position: relative;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
     }
 
-    .background {
+    .overlay {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('background.png') center center no-repeat;
-      background-size: cover;
-      filter: brightness(0.3);
-      z-index: 0;
-    }
-
-    .light-effect {
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,255,200,0.3) 0%, transparent 70%);
-      mix-blend-mode: screen;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: background-color 0.5s ease;
       pointer-events: none;
       z-index: 1;
+    }
+
+    body:hover .overlay {
+      background-color: rgba(0, 0, 0, 0.2);
     }
 
     header {
@@ -72,7 +64,7 @@
     .main {
       position: relative;
       z-index: 2;
-      height: calc(100vh - 160px);
+      height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -82,13 +74,13 @@
     }
 
     .main h1 {
-      font-size: 42px;
+      font-size: 48px;
       color: #00ffc8;
       margin-bottom: 20px;
     }
 
     .main p {
-      font-size: 18px;
+      font-size: 20px;
       max-width: 600px;
       margin-bottom: 40px;
     }
@@ -107,11 +99,6 @@
     .start-button:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px #00ffc8;
-    }
-
-    .start-button:active {
-      box-shadow: 0 0 25px #00ffc8;
-      transform: scale(0.95);
     }
 
     footer {
@@ -136,7 +123,7 @@
       }
 
       .main h1 {
-        font-size: 32px;
+        font-size: 36px;
       }
 
       .main p {
@@ -146,8 +133,24 @@
   </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="light-effect" id="light"></div>
-
+  <div class="overlay"></div>
   <header>
-    <img src="logo.png" alt="GameVest">…
+    <img src="logo.png" alt="GameVest">
+    <nav>
+      <a href="#">О нас</a>
+      <a href="#">Курсы</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <h1>GameVest — инвестиции для нового поколения</h1>
+    <p>Объединяем геймеров и криптоинвесторов. Прокачай свои навыки, чтобы зарабатывать на играх и инвестициях!</p>
+    <button class="start-button">Начать</button>
+  </div>
+
+  <footer>
+    © 2025 GameVest. Все права защищены.
+  </footer>
+</body>
+</html>
